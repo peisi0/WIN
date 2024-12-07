@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zhzenyang-CN">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,6 +57,13 @@
         .start-menu a:hover {
             background-color: #0078d4;
         }
+        /* 添加右上角的图片样式 */
+        .top-left-image {
+            position: fixed; /* 固定定位 */
+            top: 20px;       /* 离顶部20px */
+            left: 20px;     /* 离左侧20px */
+            width: 60px;     /* 图片宽度设置为60px */
+        }
     </style>
 </head>
 <body>
@@ -64,12 +71,15 @@
     <div class="taskbar">
         <button class="start-button" onclick="toggleStartMenu()">开始</button>
         <div class="start-menu" id="startMenu">
-            <a href="https://apps.microsoft.com/" target = "_blank">应用中心</a>
+            <a href="https://apps.microsoft.com/">应用中心</a>
             <a href="#">关于本机</a>
             <a href="#">文件资源管理器</a>
-            <a href="https://peisi0.github.io/WIN">重启</a>
+            <a href="Win.html">重启</a>
         </div>
     </div>
+
+    <!-- 在左上角添加图片 -->
+    <img class="top-left-image" src="Arduino圖標.png" alt="Win11 Logo"> <!-- 请确保此处的图片路径正确 -->
 
     <script>
         function toggleStartMenu() {
