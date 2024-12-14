@@ -66,6 +66,20 @@
         .start-menu a:hover {
             background-color: #0078d4;
         }
+
+        .change-bg-button {
+            background-color: #0078d4;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
         
         .arduino-img {
             position: absolute;
@@ -125,6 +139,8 @@
         <img class="icon poe-img" src="poe.png" alt="poe">   
     </a>
 
+    <button class="change-bg-button" onclick="changeBackground()">切换背景</button>
+
     <script>
         function toggleStartMenu() {
             const menu = document.getElementById('startMenu');
@@ -137,6 +153,12 @@
                     menu.style.display = 'none';
                 }
             }
+        }
+        let currentBackground = 1;
+
+        function changeBackground() {
+            currentBackground = currentBackground === 1 ? 2 : 1;
+            document.body.style.backgroundImage = `url('bg${currentBackground}.png')`;
         }
     </script>
 
