@@ -154,10 +154,10 @@
                 }
             }
         }
-        let currentBackground = 2;
+        let currentBackground = 1;
 
         function changeBackground() {
-            currentBackground = currentBackground === 1 ? 2 : 1;
+            currentBackground = (currentBackground % 3) + 1;
             document.body.style.backgroundImage = `url('bg${currentBackground}.png')`;
         }
 
